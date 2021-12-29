@@ -22,7 +22,7 @@ def signalwire_to_slack_flow():
     sms_message = request.form['Body']
     message = f"Text message from {from_number}: {sms_message}"
     slack_message = slack_client.chat_postMessage(
-        channel='#signalwire_conversations', text=message, icon_emoji=':robot_face:')
+        channel='#general', text=message, icon_emoji=':robot_face:')
     response = MessagingResponse()
     return Response(response.to_xml(), mimetype="text/html"), 200
 
