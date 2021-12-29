@@ -1,19 +1,5 @@
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cc949b9-IMG_0479.jpg",
-        "IMG_0479.jpg",
-        1188,
-        1374,
-        "#68716b"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
+![image](https://user-images.githubusercontent.com/78746011/147705798-8859cf35-673a-45b9-b386-d65d64c57d98.png)
 [/block]
 # Overview
 In a day of office suites being replaced by slack channels, we figured it only appropriate to share just one of the many ways that the Slack APIs and SignalWire APIs can be used in unison. This application will associate your SignalWire phone number and your Slack Workspace so that you may send and receive messages all through the Slack interface.
@@ -55,64 +41,18 @@ Now that our application is running, we can see it live on `http://localhost:505
 Your terminal will then transform into an ngrok web interface for our application. From the screenshot below, we can see that our two webhooks **for this example** will have the domain `https://eebe18050de2.ngrok.io` and then can be differentiated by appending `/slack` or `/signalwire`, as seen in the app.py file. 
 
 With the ngrok standard account your forwarded domain will be an arbitrary scramble of alphanumeric characters which change every time you run ngrok so be sure to keep your tunnels running, or update your webhooks as needed.
-[block:image]
-{
-  "images": [
-    {
+![image](https://user-images.githubusercontent.com/78746011/147705870-c607a710-6af2-4853-8e4c-6d43ade47341.png)<br/>
       "image": [
-        "https://files.readme.io/a899e9f-Screen_Shot_2021-12-29_at_9.05.38_AM.png",
-        "Screen Shot 2021-12-29 at 9.05.38 AM.png",
-        675,
-        331,
-        "#0e1011"
-      ]
-    }
-  ]
-}
-[/block]
-
-<br/>
 
 ## Set Up Slack Bot
 
 Now that we have our slack webhook, we are ready for all of the steps to create our slackbot. After you have created your account, navigate to your [Slack apps dashboard](https://api.slack.com/apps) and select **Create New App** then **From Scratch** . Continue on with naming your bot and assign it to the appropriate workspace. 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/87aec46-Screen_Shot_2021-12-29_at_11.50.52_AM.png",
-        "Screen Shot 2021-12-29 at 11.50.52 AM.png",
-        1018,
-        950,
-        "#f4f5f4"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
-<br/>
+![image](https://user-images.githubusercontent.com/78746011/147705886-cedb09e3-64a8-496b-a2ed-00afa96e2ba7.png)<br/>
 
 Once you have created your application, you should see a page that looks like this.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
+![image](https://user-images.githubusercontent.com/78746011/147705920-3cc7c533-229d-45ca-b903-a10ae7ee62af.png)<br/>
         "https://files.readme.io/6dca28f-Slackbot_Intro.png",
-        "Slackbot_Intro.png",
-        1000,
-        1125,
-        "#f3f3f3"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
-<br/>
 
 We must then set up the appropriate [Scopes](https://api.slack.com/scopes), which is the slack equivalent of allowing specific permissions. To do this, click on **Permissions** and then scroll down to **Bot Token Scopes** . Enter the following OAuth Scopes:
 * channels:history
@@ -122,23 +62,8 @@ We must then set up the appropriate [Scopes](https://api.slack.com/scopes), whic
 * chat:write.customize
 * chat:write.public
 
+![image](https://user-images.githubusercontent.com/78746011/147705939-e8fda5bb-cd9a-442a-a42b-a32a02e4e25a.png)
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/7e477e9-Screen_Shot_2021-12-29_at_11.58.23_AM.png",
-        "Screen Shot 2021-12-29 at 11.58.23 AM.png",
-        1598,
-        1570,
-        "#f7f7f8"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
 
 <br/>
 
@@ -147,23 +72,7 @@ Now that we have given our slackbot permission to do just about whatever it want
 
 From the configuring webhooks section, we noted that our slack webhook would be `https://eebe18050de2.ngrok.io/slack` for this example. Your Request URL will look similar but your own ngrok domain will need to be used.
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/2ca0393-Screen_Shot_2021-12-29_at_12.09.14_PM.png",
-        "Screen Shot 2021-12-29 at 12.09.14 PM.png",
-        1498,
-        1374,
-        "#f0f1f2"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
+![image](https://user-images.githubusercontent.com/78746011/147705948-0eee32ac-b920-4f52-b4e7-6c92402d292a.png)
 
 <br/>
 
@@ -176,22 +85,7 @@ Lastly, click ** Save Changes ** and it is time to go live with our bot.
 Navigate back to ** Basic Information ** and click on ** Install Your App ** to generate your Slack API Credentials, specifically the Bot User OAuth Token.
 
 Take a note of the `Bot User OAuth Token` because this will later be entered into our .env file.
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/cd341b6-Screen_Shot_2021-12-29_at_12.28.20_PM.png",
-        "Screen Shot 2021-12-29 at 12.28.20 PM.png",
-        1188,
-        748,
-        "#eff0f2"
-      ],
-      "sizing": "80"
-    }
-  ]
-}
-[/block]
+![image](https://user-images.githubusercontent.com/78746011/147705960-bb617df1-ed3c-4a2b-915c-68bda28b677e.png)
 
 <br/>
 
@@ -206,49 +100,18 @@ Within your SignalWire dashboard, we can associate this webhook to our phone num
 
 We will only be dealing with messaging so by scrolling down to ** Messaging Settings ** we can handle incoming messages using LaML Webhooks and then entering our ngrok domain with the `/signalwire` appended. And make sure to ** Save **!
 
-
-[block:image]
-{
-  "images": [
-    {
-      "image": [
+![image](https://user-images.githubusercontent.com/78746011/147705975-ee14eb34-7e4b-4744-827a-977055c18105.png)
         "https://files.readme.io/06ae2df-Screen_Shot_2021-12-29_at_12.43.09_PM.png",
-        "Screen Shot 2021-12-29 at 12.43.09 PM.png",
-        992,
-        376,
-        "#d9dce3"
-      ]
-    }
-  ]
-}
-[/block]
 
 <br/>
 
 You can now test this application out by messaging your SignalWire number from your own device and look out for messages in the #general channel. ** You must reply in a thread to the incoming message to initiate a conversation**
-[block:callout]
-{
-  "type": "info",
-  "title": "One Final Step!",
-  "body": "As a final step, ensure that you add your bot to your Slack channel by going into your channel's settings. Otherwise, your application will not be notified of replies in the Slack channel."
-}
-[/block]
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/acc51cc-Screen_Shot_2021-12-29_at_12.55.44_PM.png",
-        "Screen Shot 2021-12-29 at 12.55.44 PM.png",
-        577,
-        448,
-        "#212428"
-      ]
-    }
-  ]
-}
-[/block]
+
+As a final step, ensure that you add your bot to your Slack channel by going into your channel's settings. Otherwise, your application will not be notified of replies in the Slack channel.
+
+
+![image](https://user-images.githubusercontent.com/78746011/147705987-8311c8f5-7ec3-414e-b7ce-20b3ca315b69.png)
 <br/>
 
 # Step By Step Code Walkthrough
